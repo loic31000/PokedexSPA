@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Pokedex</title>
+  </head>
+  <body>
+    <main class="maincontent" id="maincontent">
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchBar" placeholder="Cherche un Pokémon..." name="searchbar"/>
+      </div>
+
+      <!-- Résultat de recherche -->
+      <div id="searchResult"></div>
+      
+      <!-- Zone affichant le numéro du Pokémon -->
+      <div class="pokemon-id" id="pokemonId">n°1</div>
+
+      <!-- Image principale du Pokémon -->
+      <img src="" alt="Image Pokémon" class="pokemon-img-big" id="pokemonImage" />
+
+      <!-- Le nom du Pokémon affiché en grand -->
+      <h1 class="pokemon-name-big" id="pokemonName">Bulbizarre</h1>
+
+      <!-- Conteneur où seront affichés les types (ex: Plante, Feu) -->
+      <div class="pokemon-types" id="pokemonTypes"></div>
+
+    <div class="container">
+      <div class="sidebar"></div>
+      <div class="pokemon-list" id="pokemonList"></div>
+
+
+        <!-- Section qui montre l'évolution du Pokémon (initialement cachée) -->
+        <section class="evolution-section" id="evolutionSection" style="display: none">
+          <h2 class="evolution-header">Evolution</h2>
+          <ol class="evolution-list" id="evolutionList"></ol>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
