@@ -1,46 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
-    <title>Pokedex</title>
-  </head>
-  <body>
-    <main class="maincontent" id="maincontent">
-      <div class="search-bar">
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokedex</title>
+  <!-- Lien vers ton fichier CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="layout">
+    <!-- Colonne gauche : liste des Pokémon -->
+    <aside id="conteneurPokemons" class="liste-pokemons"></aside>
+
+    <!-- Colonne droite : fiche détail et recherche -->
+    <section>
+      <div class="barre-de-recherche">
         <span class="search-icon">🔍</span>
-        <input type="text" id="searchBar" placeholder="Cherche un Pokémon..." name="searchbar"/>
+        <input type="text" id="barreRecherche" placeholder="Recherche..." />
       </div>
+      <div id="resultatRecherche"></div>
+    </section>
 
-      <!-- Résultat de recherche -->
-      <div id="searchResult"></div>
-      
-      <!-- Zone affichant le numéro du Pokémon -->
-      <div class="pokemon-id" id="pokemonId">n°1</div>
-
-      <!-- Image principale du Pokémon -->
-      <img src="" alt="Image Pokémon" class="pokemon-img-big" id="pokemonImage" />
-
-      <!-- Le nom du Pokémon affiché en grand -->
-      <h1 class="pokemon-name-big" id="pokemonName">Bulbizarre</h1>
-
-      <!-- Conteneur où seront affichés les types (ex: Plante, Feu) -->
-      <div class="pokemon-types" id="pokemonTypes"></div>
-
-    <div class="container">
-      <div class="sidebar"></div>
-      <div class="pokemon-list" id="pokemonList"></div>
-
-
-        <!-- Section qui montre l'évolution du Pokémon (initialement cachée) -->
-        <section class="evolution-section" id="evolutionSection" style="display: none">
-          <h2 class="evolution-header">Evolution</h2>
-          <ol class="evolution-list" id="evolutionList"></ol>
-        </section>
-      </main>
-    </div>
-
-    <script src="script.js"></script>
-  </body>
+    <!-- Template pour un item dans la liste de gauche -->
+    <template id="templateListe">
+      <div class="item-liste">
+        <span class="numero-pokemon"></span>
+        <span class="nom-pokemon"></span>
+        <img class="mini-sprite" src="" alt="" />
+      </div>
+    </template>
+    <!-- Template pour la fiche détaillée à droite -->
+    <template id="templatePokemon">
+      <div class="fiche-pokemon">
+        <div class="pokemon-id"></div>
+        <img class="pokemon-image" src="" alt="" />
+        <h1 class="pokemon-nom"></h1>
+        <ul class="pokemon-types"></ul>
+        <div class="pokemon-evolutions"></div>
+      </div>
+    </template>
+  </main>
+  <!-- Lien vers ton fichier JS -->
+  <script src="script.js"></script>
+</body>
 </html>
