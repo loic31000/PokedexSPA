@@ -32,14 +32,14 @@ function creerItemListe(pokemon, callbackClick) {
 
 // Fonction qui crée la liste des types (herbe, feu, etc.) d'un Pokémon
 function creerTypes(types) {
-  // Crée une liste HTML <ul> pour afficher chaque type
-  const ulTpes = document.createElement('ul');
+  // Crée une liste HTML <h2> pour afficher chaque type
+  const h2Types = document.createElement('h2');
   // Ajoute la classe CSS spéciale pour le style
-  ulTpes.classList.add('pokemon-types');
+  h2Types.classList.add('pokemon-types');
   // Pour chaque type du tableau...
   types.forEach(type => {
-    // Crée un élément de liste <li>
-    const liType = document.createElement('li');
+    // Crée un élément de liste <p>
+    const pType = document.createElement('p');
     // Crée une image pour l'icône du type
     const imgType = document.createElement('img');
     // Attribue l’URL de l’icône à l’image
@@ -50,14 +50,14 @@ function creerTypes(types) {
     imgType.width = 24;
     imgType.height = 24;
     // Place l’icône dans la liste
-    liType.appendChild(imgType);
+    pType.appendChild(imgType);
     // Ajoute le nom du type juste à côté
-    liType.append(` ${type.name}`);
-    // Place ce <li> dans la <ul>
-    ulTpes.appendChild(liType);
+    pType.append(` ${type.name}`);
+    // Place ce <p> dans la <h2>
+    h2Types.appendChild(pType);
   });
-  // Retourne toute la liste <ul> finie
-  return ulTpes;
+  // Retourne toute la liste <h2> finie
+  return h2Types;
 }
 
 // Fonction pour afficher la section "évolutions" (Pokémon suivants)
@@ -73,29 +73,30 @@ function creerEvolutions(evolutions, callbackClick) {
   titre.textContent = 'Évolutions :';
   // Ajoute le titre au bloc évolutions
   divEvolutions.appendChild(titre);
-  // Crée une liste HTML <ul> pour toutes les évolutions
-  const ulEvolutions = document.createElement('ul');
+  // Crée une liste HTML <p> pour toutes les évolutions
+  const pEvolutions = document.createElement('p');
   // Pour chaque évolution proposée par l’API
   evolutions.forEach(evo => {
     // Crée l’entrée de la liste
-    const liEvolution = document.createElement('li');
+    const pEvolution = document.createElement('p');
     // Nom cliquable (span)
     const spanClickable = document.createElement('span');
     spanClickable.textContent = evo.name;
     // Style bleu souligné comme un lien
     spanClickable.style.cursor = 'pointer';
+    // Texte souligné
     spanClickable.style.textDecoration = 'underline';
     // Quand on clique sur l'évolution, on affiche sa fiche dans la partie détail
     spanClickable.addEventListener('click', () => {
       callbackClick(evo.pokedexId || evo.id || evo.name);
     });
     // Ajoute le lien à la ligne
-    liEvolution.appendChild(spanClickable);
-    // Ajoute la ligne à la liste ul
-    ulEvolutions.appendChild(liEvolution);
+    pEvolution.appendChild(spanClickable);
+    // Ajoute la ligne à la liste p
+    pEvolutions.appendChild(pEvolution);
   });
-  // Ajoute toute la liste <ul> au bloc évolutions
-  divEvolutions.appendChild(ulEvolutions);
+  // Ajoute toute la liste <p> au bloc évolutions
+  divEvolutions.appendChild(pEvolutions);
   // Retourne toute la section construite
   return divEvolutions;
 }
@@ -116,15 +117,14 @@ function creerPokemon(pokemon, callbackClick) {
   const conteneurTypes = clone.querySelector('.pokemon-types');
   // Pour chaque type, on ajoute l’icône + nom à la fiche
   pokemon.apiTypes.forEach(type => {
-    const liType = document.createElement('li');
+    const pType = document.createElement('p');
     const imgType = document.createElement('img');
     imgType.src = type.image;
     imgType.alt = type.name;
     imgType.width = 24;
     imgType.height = 24;
-    liType.appendChild(imgType);
-    liType.append(` ${type.name}`);
-    conteneurTypes.appendChild(liType);
+    pType.appendChild(imgType);
+    conteneurTypes.appendChild(pType);
   });
   // Zone qui accueillera les évolutions
   const conteneurEvolutions = clone.querySelector('.pokemon-evolutions');

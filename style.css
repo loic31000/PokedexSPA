@@ -78,12 +78,39 @@ section {
   background: transparent;
   padding: 26px 0 28px 0;
   margin-left: 16px;
+  display: flex;
+  justify-content: center;
 }
 
 .search-icon {
   color: #fff;
   font-size: 1.7em;
   opacity: 0.85;
+}
+
+.pokemon-id {
+    display: flex;
+    justify-content: center;
+}
+
+.fiche-pokemon {
+    display: grid;
+    justify-content: center;
+}
+
+.pokemon-nom {
+    display: flex;
+    justify-content: center;
+}
+
+.pokemon-types {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+h4 {
+    display: flex;
+    justify-content: center;
 }
 
 #barreRecherche {
