@@ -5,9 +5,9 @@ const templatePokemon = document.getElementById('templatePokemon');
 const resultatRecherche = document.getElementById('resultatRecherche');
 const barreRecherche = document.getElementById('barreRecherche');
 
-let pokemonsList = []; // Stockera la liste complète
+let pokemonsList = []; 
 
-// Cherche un Pokémon par pokedexId dans la liste globale
+
 function trouverPokemonParId(id) {
   return pokemonsList.find(p => p.pokedexId === id);
 }
@@ -59,28 +59,26 @@ function creerEvolutions(evolutions, callbackClick, currentId) {
 
     const ligne = document.createElement("div");
     ligne.classList.add('evolution-item');
-    // ligne.style.display = 'flex';
-    // ligne.style.alignItems = 'center';
-    // ligne.style.justifyContent = 'center';
     ligne.style.backgroundColor = '#2d2d2d';
     ligne.style.gap = '10px';
     ligne.style.cursor = 'pointer';
-    // ligne.style.height = '50px';
-    // ligne.style.width = '500px'; // Ajustez la largeur selon vos besoins
 
     const spanNumero = document.createElement('span');
+    spanNumero.classList.add('evolution-number');
     spanNumero.textContent = fullPokemon ? `${fullPokemon.pokedexId}` : '';
     spanNumero.style.minWidth = '40px';
     spanNumero.style.color = '#fff';
     spanNumero.style.fontWeight = 'bold';
 
     const imgEvo = document.createElement('img');
+    imgEvo.classList.add('evolution-image');
     imgEvo.src = fullPokemon ? fullPokemon.image : '';
     imgEvo.alt = fullPokemon ? fullPokemon.name : evo.name;
     imgEvo.width = 42;
     imgEvo.height = 42;
 
     const spanNom = document.createElement('span');
+    spanNom.classList.add('evolution-name');
     spanNom.textContent = evo.name;
     spanNom.style.color = '#fff';
     spanNom.style.fontSize = '1em';
@@ -88,7 +86,6 @@ function creerEvolutions(evolutions, callbackClick, currentId) {
     ligne.appendChild(spanNumero);
     ligne.appendChild(spanNom);
     ligne.appendChild(imgEvo);
-
     ligne.addEventListener('click', () => {
       callbackClick(evo.pokedexId || evo.id || evo.name);
     });

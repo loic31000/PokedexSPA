@@ -30,7 +30,7 @@ body {
   padding: 12px 20px; 
   font-size: 17px; 
   border-radius: 10px; 
-  margin-bottom: 14px; 
+  margin-bottom: 25px;
   box-shadow: 0 3px 7px rgb(0 0 0 / 0.4); 
   cursor: pointer; 
   user-select: none; 
@@ -38,10 +38,12 @@ body {
   color: white;
   max-height: 100vh;
 }
+.item-liste:hover {
+  background-color: #3a3a3a; 
+}
 
 .evolution-item {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 12px 20px;
   font-size: 17px;
@@ -49,11 +51,28 @@ body {
   margin-bottom: 14px;
   box-shadow: 0 3px 7px rgb(0 0 0 / 0.4);
   user-select: none;
-  transition: background-color 0.3s ease;
   color: white;
-  max-height: 100vh;
-  width: 550px;
+  max-width: 550px;
+  height: 57px;
+  width: 413px;
 }
+
+.evolution-item img {
+  width: 69px;
+  height: 63px;
+  margin: 189px;
+}
+
+.evolution-item span {
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.evolution-list {
+    margin: -27px;
+}
+
+
 
 .numero-pokemon {
   min-width: 24px;
@@ -86,7 +105,7 @@ section {
 
 /* En haut de la fiche : recherche */
 .barre-de-recherche {
-  width: 100%;
+  width: 91%;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -117,40 +136,42 @@ section {
 .pokemon-nom {
     display: flex;
     justify-content: center;
+    margin: -77px;
 }
 
 .pokemon-types {
   display: flex;
   justify-content: center;
   margin: -2rem;
+  gap: 3rem;
 }
 
 .pokemon-evolutions {
   display: flex;
   justify-content: center;
+  padding: 12px;
+  margin: 12px;
+  max-width: 550px;
+
 }
 
 .pokemon-image {
-  height: 22rem;
-  width: 22rem;
+  height: 85%;
+  width: 100%;
 }
 
 h4 {
     display: flex;
-    justify-content: center;
 }
 
 h5 {
   display: flex;
   justify-content: center;
-  font-size: 2rem;
-  margin: 1rem;
+  font-size: 19px;
+  margin: -2rem;
 }
 
-span {
-  display: flex;
-  justify-content: center;
-}
+
 
 #barreRecherche {
   background: rgba(255,255,255,0.16);
@@ -159,7 +180,7 @@ span {
   border: none;
   border-radius: 8px;
   font-size: 1.14em;
-  width: 310px;
+  width: 358px;
   max-width: 80vw;
   outline: none;
 }
