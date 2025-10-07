@@ -1,46 +1,51 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pokedex</title>
-  <!-- Lien vers ton fichier CSS -->
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <main class="layout">
-    <!-- Colonne gauche : liste des Pokémon -->
-    <aside id="conteneurPokemons" class="liste-pokemons"></aside>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <!-- Colonne gauche : liste des Pokémon -->
+      <aside id="conteneurPokemons" class="liste-pokemons"></aside>
 
-    <!-- Colonne droite : fiche détail et recherche -->
-    <section>
-      <div class="barre-de-recherche">
-        <span class="search-icon">🔍</span>
-        <input type="text" id="barreRecherche" placeholder="Recherche..." />
-      </div>
-      <div id="resultatRecherche"></div>
-    </section>
+      <!-- Colonne droite : fiche détail et recherche -->
+      <section>
+        <div class="barre-de-recherche">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="barreRecherche" placeholder="Recherche..." />
+        </div>
+        <div id="resultatRecherche"></div>
+      </section>
 
-    <!-- Template pour un item dans la liste de gauche -->
-    <template id="templateListe">
-      <div class="item-liste">
-        <span class="numero-pokemon"></span>
-        <span class="nom-pokemon"></span>
-        <img class="mini-sprite" src="" alt="" />
-      </div>
-    </template>
-    <!-- Template pour la fiche détaillée à droite -->
-    <template id="templatePokemon">
-      <div class="fiche-pokemon">
-        <div class="pokemon-id"></div>
-        <img class="pokemon-image" src="" alt="" />
-        <h1 class="pokemon-nom"></h1>
-        <h2 class="pokemon-types"></h2>
-        <div class="pokemon-evolutions"></div>
-      </div>
-    </template>
-  </main>
-  <!-- Lien vers ton fichier JS -->
-  <script src="script.js"></script>
-</body>
+      <!-- Template pour un item dans la liste de gauche -->
+      <template id="templateListe">
+        <div class="item-liste">
+          <span class="numero-pokemon"></span>
+          <span class="nom-pokemon"></span>
+          <img class="mini-image" src="" alt="" />
+        </div>
+      </template>
+
+      <!-- Template pour la fiche détaillée à droite -->
+      <template id="templatePokemon">
+        <div class="fiche-pokemon">
+          <div class="pokemon-id"></div>
+          <img class="pokemon-image" src="" alt="" />
+          <h1 class="pokemon-nom"></h1>
+          <h5>Types</h5>
+          <h2 class="pokemon-types"></h2>
+          <div class="pokemon-evolutions"></div>
+        </div>
+      </template>
+     
+
+
+    </main>
+
+    <!-- Lien vers ton fichier JS -->
+    <script src="script.js"></script>
+  </body>
 </html>

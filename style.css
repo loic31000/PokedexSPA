@@ -1,40 +1,58 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
   background: #232323;
 }
 
 /* Layout général : sidebar gauche + contenu principal à droite */
 .layout {
   display: grid;
-  grid-template-columns: 290px 1fr;
+  grid-template-columns: 550px 1fr ;
   height: 100vh;
 }
 
 /* Sidebar (liste des pokémons) */
 .liste-pokemons {
-  background: #232323;
-  padding-top: 18px;
+  background: #b52b2c;
+  padding: 20px;
   padding-bottom: 18px;
   height: 100vh;
   overflow-y: auto;
+  box-sizing: border-box;
 }
 
+
 .item-liste {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  display: flex; 
+  background-color: #2d2d2d; 
+  justify-content: space-between;
+  align-items: center; 
+  padding: 12px 20px; 
+  font-size: 17px; 
+  border-radius: 10px; 
+  margin-bottom: 14px; 
+  box-shadow: 0 3px 7px rgb(0 0 0 / 0.4); 
+  cursor: pointer; 
+  user-select: none; 
+  transition: background-color 0.3s ease;
   color: white;
-  font-size: 1em;
-  background: none;
-  border: none;
-  padding: 0 0 22px 17px;
-  font-weight: 600;
-  cursor: pointer;
-  outline: none;
-  min-height: 50px;
-  gap: 16px;
+  max-height: 100vh;
+}
+
+.evolution-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  font-size: 17px;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  box-shadow: 0 3px 7px rgb(0 0 0 / 0.4);
+  user-select: none;
+  transition: background-color 0.3s ease;
+  color: white;
+  max-height: 100vh;
+  width: 550px;
 }
 
 .numero-pokemon {
@@ -53,11 +71,8 @@ body {
   text-transform: capitalize;
 }
 
-.mini-sprite {
-  width: 46px;
-  height: 46px;
-  object-fit: contain;
-  margin-left: 18px;
+.mini-image {
+  width: 57px;
 }
 
 /* Fiche à droite */
@@ -89,8 +104,9 @@ section {
 }
 
 .pokemon-id {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  margin: -1rem;
 }
 
 .fiche-pokemon {
@@ -104,13 +120,36 @@ section {
 }
 
 .pokemon-types {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: center;
+  margin: -2rem;
+}
+
+.pokemon-evolutions {
+  display: flex;
+  justify-content: center;
+}
+
+.pokemon-image {
+  height: 22rem;
+  width: 22rem;
 }
 
 h4 {
     display: flex;
     justify-content: center;
+}
+
+h5 {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 1rem;
+}
+
+span {
+  display: flex;
+  justify-content: center;
 }
 
 #barreRecherche {
