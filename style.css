@@ -1,198 +1,214 @@
+/* Style de base pour tout le corps de la page */
 body {
-  margin: 0;
-  padding: 0;
-  background: #232323;
+  margin: 0; /* Pas d’espace autour de la page */
+  padding: 0; /* Pas de marges internes */
+  background: #232323; /* Couleur de fond gris très foncé */
 }
 
-/* Layout général : sidebar gauche + contenu principal à droite */
+/* Mise en page principale : grille avec 2 colonnes */
+/* Colonne gauche fixe à 550px, colonne droite prend tout le reste */
 .layout {
-  display: grid;
-  grid-template-columns: 550px 1fr ;
-  height: 100vh;
+  display: grid; /* Utilise un grid layout */
+  grid-template-columns: 550px 1fr; /* 1ère colonne 550px, 2ème prend le reste */
+  height: 100vh; /* Hauteur égale à la hauteur de la fenêtre */
 }
 
-/* Sidebar (liste des pokémons) */
+/* Style pour la barre latérale gauche (liste des Pokémon) */
 .liste-pokemons {
-  background: #b52b2c;
-  padding: 20px;
-  padding-bottom: 18px;
-  height: 100vh;
-  overflow-y: auto;
-  box-sizing: border-box;
+  background: #b52b2c; /* Couleur rouge foncé */
+  padding: 20px; /* Espace interne tout autour */
+  padding-bottom: 18px; /* Un peu moins en bas */
+  height: 100vh; /* Prend toute la hauteur de la fenêtre */
+  overflow-y: auto; /* Barre de défilement verticale si contenu dépasse */
+  box-sizing: border-box; /* Inclut padding dans la taille totale */
 }
 
-
+/* Style pour chaque élément de la liste des Pokémon */
 .item-liste {
-  display: flex; 
-  background-color: #2d2d2d; 
-  justify-content: space-between;
-  align-items: center; 
-  padding: 12px 20px; 
-  font-size: 17px; 
-  border-radius: 10px; 
-  margin-bottom: 25px;
-  box-shadow: 0 3px 7px rgb(0 0 0 / 0.4); 
-  cursor: pointer; 
-  user-select: none; 
-  transition: background-color 0.3s ease;
-  color: white;
-  max-height: 100vh;
+  display: flex; /* Met en ligne les éléments enfants */
+  background-color: #2d2d2d; /* Fond gris foncé */
+  justify-content: space-between; /* Espacer les enfants au max */
+  align-items: center; /* Centrer verticalement */
+  padding: 12px 20px; /* Rembourrage interne */
+  font-size: 17px; /* Taille de texte */
+  border-radius: 10px; /* Coins arrondis */
+  margin-bottom: 25px; /* Espace en dessous */
+  box-shadow: 0 3px 7px rgb(0 0 0 / 0.4); /* Ombre portée */
+  cursor: pointer; /* Curseur en forme de main au survol */
+  user-select: none; /* Désactive la sélection de texte */
+  transition: background-color 0.3s ease; /* Animation douce au changement de couleur */
+  color: white; /* Texte en blanc */
+  max-height: 100vh; /* Hauteur max égale à la fenêtre */
 }
+
+/* Changement de fond quand on survole un élément de la liste */
 .item-liste:hover {
-  background-color: #3a3a3a; 
+  background-color: #3a3a3a; /* Fond gris un peu plus clair */
 }
 
+/* Style pour les items de la liste des évolutions */
 .evolution-item {
-  display: flex;
-  align-items: center;
-  padding: 12px 20px;
-  font-size: 17px;
-  border-radius: 10px;
-  margin-bottom: 14px;
-  box-shadow: 0 3px 7px rgb(0 0 0 / 0.4);
-  user-select: none;
-  color: white;
-  max-width: 550px;
-  height: 57px;
-  width: 413px;
+  display: flex; /* Aligne enfants horizontalement */
+  align-items: center; /* Centre verticalement */
+  padding: 12px 20px; /* Rembourrage intérieur */
+  font-size: 17px; /* Taille du texte */
+  border-radius: 10px; /* Coins arrondis */
+  margin-bottom: 14px; /* Espacement en dessous */
+  box-shadow: 0 3px 7px rgb(0 0 0 / 0.4); /* Ombre portée */
+  user-select: none; /* Pas de sélection de texte */
+  color: white; /* Texte blanc */
+  max-width: 550px; /* Largeur max 550px */
+  height: 57px; /* Hauteur fixe */
+  width: 413px; /* Largeur fixe */
 }
 
+/* Style spécifique à l’image dans les évolutions */
 .evolution-item img {
-  width: 69px;
-  height: 63px;
-  margin: 189px;
+  width: 69px; /* Largeur image */
+  height: 63px; /* Hauteur image */
+  margin: 189px; /* Très grand margin (probablement une erreur ou non voulu) */
 }
 
+/* Style pour les éléments span dans évolutions */
 .evolution-item span {
-  font-weight: 600;
-  flex-shrink: 0;
+  font-weight: 600; /* Texte un peu gras */
+  flex-shrink: 0; /* Ne réduit pas la taille */
 }
 
+/* Style pour la liste des évolutions */
 .evolution-list {
-    margin: -27px;
+  margin: -27px; /* Décalage négatif tout autour */
 }
 
-
-
+/* Style pour le numéro de Pokémon dans la liste */
 .numero-pokemon {
-  min-width: 24px;
-  font-size: 1em;
-  opacity: 0.8;
-  margin-right: 7px;
+  min-width: 24px; /* Largeur minimum */
+  font-size: 1em; /* Taille normale */
+  opacity: 0.8; /* Un peu transparent */
+  margin-right: 7px; /* Espace à droite */
 }
 
+/* Style pour le nom du Pokémon dans la liste */
 .nom-pokemon {
-  flex: 1;
-  text-align: left;
-  font-size: 1em;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  text-transform: capitalize;
+  flex: 1; /* Prend tout l’espace disponible */
+  text-align: left; /* Texte aligné à gauche */
+  font-size: 1em; /* Taille normale */
+  font-weight: 500; /* Texte moyen gras */
+  letter-spacing: 0.5px; /* Espacement entre les lettres */
+  text-transform: capitalize; /* Met la première lettre en majuscule */
 }
 
+/* Style pour la petite image (thumbnail) du Pokémon */
 .mini-image {
-  width: 57px;
+  width: 57px; /* Largeur fixe */
 }
 
-/* Fiche à droite */
+/* Style pour la fiche détaillée (section droite) */
 section {
-  background: #b52b2c;
-  height: 100vh;
-  overflow-y: auto;
-  padding: 0;
-  position: relative;
+  background: #b52b2c; /* Fond rouge foncé */
+  height: 100vh; /* Prend toute la hauteur */
+  overflow-y: auto; /* Barre de défilement verticale */
+  padding: 0; /* Pas de padding */
+  position: relative; /* Position relative pour éléments internes */
 }
 
-/* En haut de la fiche : recherche */
+/* Style pour la barre de recherche en haut de la fiche */
 .barre-de-recherche {
-  width: 91%;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: transparent;
-  padding: 26px 0 28px 0;
-  margin-left: 16px;
-  display: flex;
-  justify-content: center;
+  width: 91%; /* Largeur presque totale */
+  display: flex; /* Flexbox pour aligner éléments */
+  align-items: center; /* Centre verticalement */
+  gap: 10px; /* Espacement horizontal entre enfants */
+  background: transparent; /* Fond transparent */
+  padding: 26px 0 28px 0; /* Padding vertical */
+  margin-left: 16px; /* Décalage à gauche */
+  justify-content: center; /* Centre horizontalement */
 }
 
+/* Style pour icône dans la barre de recherche */
 .search-icon {
-  color: #fff;
-  font-size: 1.7em;
-  opacity: 0.85;
+  color: #fff; /* Couleur blanche */
+  font-size: 1.7em; /* Grande taille */
+  opacity: 0.85; /* Légèrement transparent */
 }
 
+/* Style pour l’ID du Pokémon affiché */
 .pokemon-id {
   display: flex;
-  justify-content: center;
-  margin: -1rem;
+  justify-content: center; /* Centre horizontalement */
+  margin: -1rem; /* Petite marge négative */
 }
 
+/* Style de la fiche Pokémon */
 .fiche-pokemon {
-    display: grid;
-    justify-content: center;
+  display: grid; /* Grille */
+  justify-content: center; /* Centre contenu horizontalement */
 }
 
+/* Style pour le nom du Pokémon */
 .pokemon-nom {
-    display: flex;
-    justify-content: center;
-    margin: -77px;
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  margin: -77px; /* Marge négative importante */
 }
 
+/* Style pour la liste des types sur la fiche */
 .pokemon-types {
-  display: flex;
-  justify-content: center;
-  margin: -2rem;
-  gap: 3rem;
+  display: flex; /* Aligne horizontalement */
+  justify-content: center; /* Centre horizontal */
+  margin: -2rem; /* Marge négative */
+  gap: 3rem; /* Espace entre chaque type */
 }
 
+/* Style pour la zone des évolutions sur la fiche */
 .pokemon-evolutions {
-  display: flex;
-  justify-content: center;
-  padding: 12px;
-  margin: 12px;
-  max-width: 550px;
-
+  display: flex; /* Aligne horizontalement */
+  justify-content: center; /* Centre horizontal */
+  padding: 12px; /* Padding interne */
+  margin: 12px; /* Marge externe */
+  max-width: 550px; /* Largeur max fixe */
 }
 
+/* Style pour l’image principale du Pokémon */
 .pokemon-image {
-  height: 85%;
-  width: 100%;
+  height: 85%; /* Hauteur relative */
+  width: 100%; /* Largeur pleine */
 }
 
+/* Style pour titres h4 */
 h4 {
-    display: flex;
+  display: flex; /* Flex pour faciliter l’alignement */
 }
 
+/* Style pour titres h5 */
 h5 {
   display: flex;
-  justify-content: center;
-  font-size: 19px;
-  margin: -2rem;
+  justify-content: center; /* Centre texte */
+  font-size: 19px; /* Taille texte */
+  margin: -2rem; /* Marge négative */
 }
 
-
-
+/* Style pour le champ de recherche spécifique */
 #barreRecherche {
-  background: rgba(255,255,255,0.16);
-  color: white;
-  padding: 13px 20px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.14em;
-  width: 358px;
-  max-width: 80vw;
-  outline: none;
+  background: rgba(255,255,255,0.16); /* Fond blanc transparent */
+  color: white; /* Texte blanc */
+  padding: 13px 20px; /* Padding interne */
+  border: none; /* Pas de bordure */
+  border-radius: 8px; /* Bords arrondis */
+  font-size: 1.14em; /* Taille texte */
+  width: 358px; /* Largeur fixe */
+  max-width: 80vw; /* Max 80% de la largeur écran */
+  outline: none; /* Pas de contour au focus */
 }
 
+/* Style pour le texte placeholder dans la barre de recherche */
 #barreRecherche::placeholder {
-  color: #fff;
-  opacity: 0.5;
+  color: #fff; /* Texte blanc */
+  opacity: 0.5; /* Transparence à 50% */
 }
 
-/* Pour le centre de la fiche : adapte selon besoin */
+/* Style pour la zone d’affichage du résultat de recherche */
 #resultatRecherche {
-  margin: 30px 0 0 0;
-  color: white;
-  font-size: 1.1em;
+  margin: 30px 0 0 0; /* Marge en haut pour espacer */
+  color: white; /* Texte blanc */
+  font-size: 1.1em; /* Taille du texte légèrement plus grande */
 }
