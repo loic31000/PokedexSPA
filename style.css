@@ -66,7 +66,7 @@ body {
 .evolution-item img {
   width: 69px; /* Largeur image */
   height: 63px; /* Hauteur image */
-  margin: 189px; /* Très grand margin (probablement une erreur ou non voulu) */
+  margin: 189px; 
 }
 
 /* Style pour les éléments span dans évolutions */

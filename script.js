@@ -165,7 +165,7 @@ async function afficherPokemon(idOuNom) {
 // Fonction principale qui démarre la plupart des opérations
 async function main() {
   // Récupère les 151 premiers Pokémon via API
-  const reponse = await fetch('https://pokebuildapi.fr/api/v1/pokemon/limit/151');
+  const reponse = await fetch('https://pokebuildapi.fr/api/v1/pokemon/limit/898');
   pokemonsList = await reponse.json(); // Met la liste reçue dans pokemonsList
 
   conteneurPokemons.innerHTML = ''; // Vide le conteneur de la liste
