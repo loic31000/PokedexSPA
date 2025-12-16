@@ -5,6 +5,6 @@
 ![CSS3](https://img.shields.io/badge/CSS3-Responsive-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![API](https://img.shields.io/badge/PokeAPI-REST-FF0000?style=for-the-badge)
 
-Application **Pokedex** en **Single Page Application** qui consomme l’API PokéAPI pour afficher les Pokémon, leurs types et statistiques de base. [web:107]
+Application **Pokedex** en **Single Page Application** qui consomme l’API PokéAPI pour afficher les Pokémon, leurs types et statistiques de base. 
 
 ---
