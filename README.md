@@ -1,73 +1,74 @@
-# 🧿 PokedexSPA
+# PokedexSPA
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" width="120" />
+  <img src="https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/API-PokéBuild-EF5350?style=for-the-badge" alt="PokéBuild API">
+  <img src="https://img.shields.io/badge/Apache-HTTPD-D22128?style=for-the-badge&logo=apache&logoColor=white" alt="Apache HTTPD">
 </p>
 
-<p align="center">
-  <strong>Pokémon Single Page Application using PokéBuild API</strong>
-</p>
+Pokédex en Single Page Application développé en JavaScript natif et alimenté par PokéBuild API.
 
-<p align="center">
-  <img src="https://img.shields.io/github/languages/count/loic31000/PokedexSPA?style=for-the-badge&color=orange" />
-  <img src="https://img.shields.io/github/languages/top/loic31000/PokedexSPA?style=for-the-badge&color=yellow" />
-</p>
+## Fonctionnalités vérifiées
 
-<p align="center">
-  <img src="https://img.shields.io/badge/HTML5-✔️-e34c26?style=for-the-badge&logo=html5&logoColor=white" />
-  <img src="https://img.shields.io/badge/CSS3-✔️-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
-  <img src="https://img.shields.io/badge/JavaScript-✔️-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
-  <img src="https://img.shields.io/badge/API-PokéBuild-red?style=for-the-badge" />
-</p>
+- chargement de la liste des Pokémon depuis PokéBuild API ;
+- affichage d'une liste cliquable avec numéro, nom et image ;
+- fiche détaillée d'un Pokémon ;
+- affichage des types ;
+- affichage des évolutions lorsqu'elles existent ;
+- navigation en cliquant sur une évolution ;
+- recherche dynamique par nom ou identifiant ;
+- affichage d'un message d'erreur lorsque la requête de détail échoue.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/code_quality-clean-success?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/architecture-SPA-blueviolet?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/frontend-vanilla_JS-informational?style=for-the-badge" />
-</p>
+Le script charge actuellement jusqu'à 898 Pokémon pour construire la liste.
 
----
+## Architecture
 
-## 🚀 Project Overview
+```text
+PokedexSPA/
+├── index.html
+├── script.js
+├── style.css
+├── dockerfile
+└── README.md
+```
 
-**PokedexSPA** is a **Single Page Application** built with **vanilla JavaScript**.  
-The application fetches Pokémon data from the **PokéBuild API** and displays useful information such as:
+L'interface repose sur des éléments `<template>` HTML clonés et remplis dynamiquement par `script.js`.
 
-- Pokémon name
-- Types
-- Stats
-- Visual assets
+## Lancement simple
 
-This project focuses on **API consumption**, **asynchronous JavaScript**, and **clean frontend architecture** without frameworks.
+Aucune étape de build n'est nécessaire.
 
----
-
-## 🧠 Features
-
-- 🔍 Fetch Pokémon data from PokéBuild API
-- 🧩 Dynamic rendering without page reload
-- 📊 Display Pokémon stats and types
-- 📱 Responsive design
-- 🧼 Clean and readable codebase
-
----
-
-## 🛠️ Technologies Used
-
-| Technology | Description |
-|-----------|-------------|
-| 🟧 HTML5 | Application structure |
-| 🎨 CSS3 | Styling & layout |
-| 🟨 JavaScript | Logic & API calls |
-| 🔴 PokéBuild API | Pokémon data source |
-
----
-
-## 📁 Project Structure
+Vous pouvez servir le dossier avec un serveur HTTP local. Par exemple avec Python :
 
 ```bash
-📦 PokedexSPA
- ┣ 📄 index.html        # Main HTML entry
- ┣ 📄 style.css         # Stylesheet
- ┣ 📄 script.js         # JavaScript logic & API calls
- ┣ 📄 README.md         # Documentation
+git clone https://github.com/loic31000/PokedexSPA.git
+cd PokedexSPA
+python -m http.server 8000
+```
+
+Ouvrez ensuite `http://localhost:8000`.
+
+## Lancement avec Docker
+
+Le `dockerfile` utilise Apache HTTPD 2.4.
+
+```bash
+docker build -f dockerfile -t pokedex-spa .
+docker run --rm -p 8080:80 --name pokedex-spa pokedex-spa
+```
+
+Ouvrez ensuite `http://localhost:8080`.
+
+## API
+
+Source des données :
+
+`https://pokebuildapi.fr/api/v1/`
+
+Le fonctionnement de l'application dépend donc de la disponibilité de ce service externe.
+
+## État du projet
+
+Le dépôt ne contient actuellement ni tests automatisés ni fichier de licence.
